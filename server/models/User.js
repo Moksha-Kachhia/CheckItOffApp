@@ -12,7 +12,7 @@ const userSchema = new Schema({
 
 userSchema.pre("save",async function(next){ //hashing new password 
     const user = this; 
-    if(!user.isModified) return next(); //data is fresh
+    if(!user.isModified('password')) return next(); //data is fresh
     let salt = await bcrypt.genSalt(10); 
     let hash = await bcrypt.hash(user.password,salt); 
     user.password = hash; 
