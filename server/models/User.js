@@ -20,8 +20,8 @@ userSchema.pre("save",async function(next){ //hashing new password
 })
 
 
-userSchema.compPassward = async function(password){ //confirming password 
-    return bcrypt.compare(password, this.password);
+userSchema.methods.comparePassword = async function(password){  
+    return bcrypt.compare(password,this.password);
 }
 
 const User = mongoose.model("User", userSchema);
