@@ -7,7 +7,7 @@
 
 .landing__text {
     flex: 1 1 40%; 
-    min-width: 300px;  
+    min-width: 300px; 
 }
 
 .landing__text h1 {
@@ -25,12 +25,18 @@
 }
 
 @media (max-width: 768px) {
-    .landing__text, .landing__img {
+    .landing__text{
         flex: 1 1 100%;  
         margin-left: 0;  
     }
 
+    .landing__img {
+        flex: 1 1 100%;
+        margin-top: 3vw;
+        margin-left: 0;
+    }
+
     .landing__text h1 {
-        font-size: 6vw;  
+        font-size: 7vw;  
     }
 }

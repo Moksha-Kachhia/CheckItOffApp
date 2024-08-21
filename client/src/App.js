@@ -4,9 +4,8 @@ import Landing from './pages/Landing/Landing';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import List from './pages/List/List';
-
-//import './App.css'
-
+import './App.css'
+//import 'antd/dist/reset.css';
 
 function App() {
   return (
