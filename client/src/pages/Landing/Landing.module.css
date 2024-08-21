@@ -1,0 +1,36 @@
+.landing__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10vh;  
+    padding: 2vw;  
+}
+
+.landing__text {
+    flex: 1 1 40%; 
+    min-width: 300px;  
+}
+
+.landing__text h1 {
+    font-size: 4vw;  
+}
+
+.landing__img {
+    flex: 1 1 50%;  
+    margin-left: 2vw; 
+    min-width: 300px;  
+}
+
+.landing__img img {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .landing__text, .landing__img {
+        flex: 1 1 100%;  
+        margin-left: 0;  
+    }
+
+    .landing__text h1 {
+        font-size: 6vw;  
+    }
+}
