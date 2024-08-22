@@ -22,9 +22,9 @@ function Login() {
       }
       const response = await AuthServices.loginUser(data);
       console.log(response.data);
-      localStorage.setItem('toDoAppUser',JSON.stringify(response.data));
+      localStorage.setItem('CheckItOffAppUser',JSON.stringify(response.data));
       message.success("Logged in Successfully!");
-      navigate('/to-do-list');
+      navigate('/list');
       setLoading(false);
     }catch(err){
       console.log(err);

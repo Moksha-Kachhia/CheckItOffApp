@@ -27,12 +27,12 @@ const updateTask = (id,data)=>{
 
 
 
-const TaskServices = {
+const listServices = {
     createTask,
-    getAllTask,
+    getAllTasks,
     deleteTask,
     updateTask
 }
 
 
-export default TaskServices;
+export default listServices;
