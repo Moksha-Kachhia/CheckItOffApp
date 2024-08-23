@@ -14,7 +14,7 @@ const createTask = (data)=>{
 }
 
 const getAllTasks = (userId)=>{
-    return axios.get(SERVER_URL+'/get-all-task/'+userId,authHeaders());
+    return axios.get(SERVER_URL+'/get-all-tasks/'+userId,authHeaders());
 }
 
 const deleteTask = (id)=>{

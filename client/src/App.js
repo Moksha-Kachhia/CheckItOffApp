@@ -15,7 +15,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/list" element={<List />} />
     </Routes>
-  );
+  )
 }
 
 export default App;

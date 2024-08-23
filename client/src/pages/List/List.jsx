@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/NavBar'
 import styles from './List.module.css';
 import { Button, Divider, Empty, Input, Modal, Select, Tag, Tooltip, message } from 'antd';
-import {getErrorMessage} from '../../util/GetError';
+import { getErrorMessage } from '../../util/GetError';
 import { getUserDetails } from '../../util/GetUser';
 import listServices from '../../services/listServices';
 import { useNavigate } from 'react-router';
@@ -54,11 +54,12 @@ function List() {
             message.error(getErrorMessage(err));
           }
         }
-      if(user && user?.userId){
-        getAllTasks();
-      }else{
-        navigate('/login');
-      }
+      // if(user && user?.userId){
+      //   getAllTasks();
+      // }else{
+      //   navigate('/login');
+      // }
+      getAllTasks();
 
   },[navigate]);
 
@@ -186,8 +187,8 @@ function List() {
   return (
     <>
     <Navbar  active={"myTask"}/>
-    <section className={styles.toDoWrapper}>
-        <div className={styles.toDoHeader}>
+    <section className={styles.taskWrapper}>
+        <div className={styles.taskHeader}>
             <h2>Your Tasks</h2>
             <Input style={{width:'50%'}} onChange={handleSearch} placeholder='Search Your Task Here...' />
             <div>
@@ -209,21 +210,21 @@ function List() {
         </div>
         <Divider />
 
-        <div className={styles.toDoListCardWrapper}>
+        <div className={styles.taskListCardWrapper}>
           {filteredTask.length > 0 ? filteredTask.map((item)=>{
             return(
-              <div key={item?._id} className={styles.toDoCard}>
+              <div key={item?._id} className={styles.taskCard}>
               <div >
-              <div className={styles.toDoCardHeader}>
+              <div className={styles.taskCardHeader}>
               <h3>{item?.title}</h3>
               {item?.isCompleted ? <Tag color="cyan">Completed</Tag> : <Tag color="red">Incomplete</Tag>}
               </div> 
               <p>{item?.description}</p>
                </div>
              
-               <div className={styles.toDoCardFooter}>
+               <div className={styles.taskCardFooter}>
                <Tag>{getFormattedDate(item?.createdAt)}</Tag>
-               <div className={styles.toDoFooterAction}>
+               <div className={styles.taskFooterAction}>
                <Tooltip title="Edit Task?"><EditOutlined onClick={()=>handleEdit(item)} className={styles.actionIcon} /></Tooltip>
                  <Tooltip title="Delete Task?"><DeleteOutlined onClick={()=>handleDelete(item)} style={{color:'red'}}   className={styles.actionIcon}/></Tooltip>
                  {item?.isCompleted ? <Tooltip title="Mark as Incomplete"><CheckCircleFilled onClick={()=>handleUpdateStatus(item._id,false)} style={{color:'green'}}  className={styles.actionIcon} /></Tooltip> :<Tooltip title="Mark as Completed"><CheckCircleOutlined onClick={()=>handleUpdateStatus(item._id,true)}  className={styles.actionIcon}/></Tooltip>}
@@ -234,18 +235,18 @@ function List() {
             )
           }) : currentTask.length > 0  ? currentTask.map((item)=>{
             return(
-              <div key={item?._id} className={styles.toDoCard}>
+              <div key={item?._id} className={styles.taskCard}>
               <div >
-              <div className={styles.toDoCardHeader}>
+              <div className={styles.taskCardHeader}>
               <h3>{item?.title}</h3>
               {item?.isCompleted ? <Tag color="cyan">Completed</Tag> : <Tag color="red">Incomplete</Tag>}
               </div> 
               <p>{item?.description}</p>
                </div>
              
-               <div className={styles.toDoCardFooter}>
+               <div className={styles.taskCardFooter}>
                <Tag>{getFormattedDate(item?.createdAt)}</Tag>
-               <div className={styles.toDoFooterAction}>
+               <div className={styles.taskFooterAction}>
                <Tooltip title="Edit Task?"><EditOutlined onClick={()=>handleEdit(item)} className={styles.actionIcon} /></Tooltip>
                  <Tooltip title="Delete Task?"><DeleteOutlined onClick={()=>handleDelete(item)} style={{color:'red'}}   className={styles.actionIcon}/></Tooltip>
                  {item?.isCompleted ? <Tooltip title="Mark as Incomplete"><CheckCircleFilled onClick={()=>handleUpdateStatus(item._id,false)} style={{color:'green'}}  className={styles.actionIcon} /></Tooltip> :<Tooltip title="Mark as Completed"><CheckCircleOutlined onClick={()=>handleUpdateStatus(item._id,true)}  className={styles.actionIcon}/></Tooltip>}
