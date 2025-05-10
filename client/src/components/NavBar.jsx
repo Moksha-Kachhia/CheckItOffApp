@@ -34,7 +34,7 @@ function Navbar({active}) {
     <nav>
          <div className='logo__wrapper'>
          <img src={logo} alt="logo"/>
-         <h4>DoDo</h4>
+         <h4>CheckItOff</h4>
          </div>
       <ul className="navigation-menu">
              
