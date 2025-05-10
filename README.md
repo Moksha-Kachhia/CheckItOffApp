@@ -1,7 +1,5 @@
 # CheckItOffApp 
-Check it out here: https://check-it-off-app.vercel.app/
-
-A full-stack productivity app that provides personalized to-do lists and task history with secure user authentication and clean, responsive design.
+A full-stack productivity app that provides personalized to-do lists and task history with secure user authentication and clean, responsive design. Check it out here: https://check-it-off-app.vercel.app/
 
 ## 🔧 Tech Stack  
 **Frontend:** React.js, ChakraUI, Figma  
