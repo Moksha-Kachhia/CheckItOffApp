@@ -1,4 +1,5 @@
-# CheckItOffApp  
+# CheckItOffApp 
+Check it out here: https://check-it-off-app.vercel.app/
 A full-stack productivity app that provides personalized to-do lists and task history with secure user authentication and clean, responsive design.
 
 ## 🔧 Tech Stack  
